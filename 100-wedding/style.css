@@ -1,0 +1,550 @@
+@charset 'utf-8';  /*# 文字コード指定
+/*# ↓ブラウザのデフォルトのCSSを無効化させる！これしないとスタイリングできない。(Doctor cssで検索して出てきたコードをコピペ。他にも種類はあるので自分に合うものを使えばOK）
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+
+
+/*↓ここからローダー*/
+/*========= LoadingのためのCSS ===============*/
+
+/* Loading背景画面設定　*/
+#splash {
+  /*fixedで全面に固定*/
+position: fixed;
+width: 100%;
+height: 100%;
+z-index: 999;
+text-align:center;
+color:#fff;
+}
+
+/* Loading画像中央配置　*/
+#splash_text {
+position: absolute;
+top: 50%;
+left: 50%;
+  z-index: 999;
+transform: translate(-50%, -50%);
+color: #fff;
+width: 100%;
+}
+
+/*IE11対策用バーの線の高さ※対応しなければ削除*/
+#splash_text svg{
+  height: 2px;
+}
+
+/*割れる画面のアニメーション*/
+.loader_cover {
+  width: 100%;
+  height: 50%;
+  background-color: #acc0b5;
+    opacity: 0.6;
+  transition: all .5s cubic-bezier(.04, .435, .315, .9);
+  transform: scaleY(1);
+}
+/*上の画面*/
+.loader_cover-up {
+  transform-origin: center top;
+}
+
+/*下の画面*/
+.loader_cover-down {
+  position: absolute;
+  bottom: 0;
+  transform-origin: center bottom;
+}
+/*クラス名がついたらY軸方向に0*/
+.coveranime {
+  transform: scaleY(0);
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
+#container{
+  width:100%;
+  height: 100vh;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+a{
+  color: #333;
+}
+
+a:hover{
+   text-decoration: none;   
+}
+
+
+/*========= ここからデザインカンプの内容 ===============*/
+
+.inner {
+  background-color: white;
+  min-width: 100%;  /* 画面小さくした時はみ出ないようにする */
+  min-height: 100%;
+  padding: 0px;
+  margin: 0 auto;   /* 中央寄せ */
+  position:relative;
+	background-size:cover;
+}
+
+/* -------- */
+/* flexbox参考：https://moshashugyo.com/media/flexbox-img-extend */
+img { /* img画像 */
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+/* -------- */
+
+.c_title {
+  background: transparent;
+  margin-left: auto;     /* 外の左余白 */
+  margin-right: auto;    /* 外の右余白 */
+  margin-top:   0px;     /* 外の上余白 */
+  margin-bottom:0px;     /* 外の下余白 */
+  width: 100%;    /* 箱 */
+  height: auto;    /* 箱 */
+  text-align: center;
+  margin: 0 0 auto;
+}
+
+.img-catchcopy {
+  background-position: center center;  /* 画像の横・縦の位置を指定*/
+  height: 100%;   /* 写真サイズ＝autoだめ */
+  width: 100%;    /* 箱に中央整列は50%? */
+  margin-left: auto;     /* 外の左余白 */
+  margin-right: auto;    /* 外の右余白 */
+  margin-top:   0px;     /* 外の上余白 */
+  margin-bottom:0px;     /* 外の下余白 */
+  position: relative;
+}
+
+/* .text-c_title {
+    width: 200px;
+}*/
+/* .h1 {
+  text-align: center;
+  margin: 0 0 auto; */
+    /* 詳細これ見る　https://haniwaman.com/inner/ */
+/* } */
+
+
+a.btn_01 {
+  position: absolute;
+  top:88.5%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);/*ベンダープレフィックス*/
+  -webkit-transform: translate(-50%,-50%);/*ベンダープレフィックス*/
+  transform: translate(-50%,-50%);/*センター寄せの修正*/
+  z-index: 10;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	width: 16.8rem; /*50%にするとテキストが改行されてしまう*/
+	margin: auto;
+	padding: 0.5rem 0rem;
+	border-radius: 100vh;
+	border-bottom: 10px solid #fff;
+	background: rgb(234,104,161);
+	color: #fff;
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 900;
+    font-family: "Noto Sans JP", sans-serif;
+  };
+}
+
+a.btn_01:hover {
+	margin-top: 6px;
+	border-bottom: 1px solid rgb(227, 72, 139);
+	color: #fff;
+}
+
+.zeroen_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.wish_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.s_btn2 {
+  position: relative;
+  opacity: 1;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+a.btn_02 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);/*ベンダープレフィックス*/
+  -webkit-transform: translate(-50%,-50%);/*ベンダープレフィックス*/
+  transform: translate(-50%,-50%);/*センター寄せの修正*/
+  z-index: 10;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	width: 16.8rem; /*50%にするとテキストが改行されてしまう*/
+	margin: auto;
+	padding: 0.5rem 0rem;
+	border-radius: 100vh;
+	border-bottom: 10px solid rgb(227, 72, 139);
+	background: rgb(234,104,161);
+	color: #fff;
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 900;
+    font-family: "Noto Sans JP", sans-serif;
+  };
+}
+
+a.btn_02:hover {
+	margin-top: 6px;
+	border-bottom: 1px solid rgb(227, 72, 139);
+	color: #fff;
+}
+
+.voice_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.reason_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.reason_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.request_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.area_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.qa_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.s_btn3 {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 1rem;
+}
+@keyframes fadeIn {
+  0% {opacity: 0.8}
+  100% {opacity: 1}
+}
+
+a.btn_03 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);/*ベンダープレフィックス*/
+  -webkit-transform: translate(-50%,-50%);/*ベンダープレフィックス*/
+  transform: translate(-50%,-50%);/*センター寄せの修正*/
+  z-index: 10;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	width: 16.8rem; /*50%にするとテキストが改行されてしまう*/
+	margin: auto;
+	padding: 0.5rem 0rem;
+	border-radius: 100vh;
+	border-bottom: 10px solid rgb(227, 72, 139);
+	background: rgb(234,104,161);
+	color: #fff;
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 900;
+    font-family: "Noto Sans JP", sans-serif;
+  };
+}
+
+a.btn_03:hover {
+	margin-top: 6px;
+	border-bottom: 1px solid rgb(227, 72, 139);
+	color: #fff;
+}
+
+
+
+/*以下、footerの設定*/
+.footer04 {
+  font-family: sans-serif;
+  font-size: 9px;
+  color: #808080;
+  background: #e5e5e5;
+  text-align: center;
+  padding: 30px;
+ }
+ .footer04 a {
+  color: #808080;
+  text-decoration: none;
+ }
+ .footer04 a:hover { /*クリックした時*/
+  text-decoration: underline;
+  color: #fff; 
+ }
+ .footer04 .menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ }
+ .footer04 .menu li {
+  margin: 0;
+  padding: 0 10px; /*各メニュー左右の余白*/
+  border-right: 1px #808080 solid; /*各メニューの右側に区切り線*/
+ }
+ .footer04 .menu li:last-child {
+  border: none;
+ }
+ .footer04 .copyright {
+  margin: 0;
+  padding: 20px 0 0 0;
+ }
+ 
+ @media only screen and (max-width: 200px) {
+ .footer04 .menu {
+  justify-content: flex-start;
+ }
+ .footer04 .menu li {
+  width: 50%;
+  box-sizing: border-box;
+  border: none;
+ }
+ .footer04 .menu li:nth-child(odd) {
+  border-right: 1px #808080 solid;
+ }
+ }
+

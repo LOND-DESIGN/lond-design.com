@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja"> <!--(en)から日本語に変更-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【今だけ】100万円相当!結婚式クーポンプレゼント</title> <!--タブの表記＆検索エンジンのタイトル部分になる-->
+    <meta name="description" content="【限定 10組様】ご応募いただいたカップルに『結婚式100万円相当』をプレゼント?! 結婚式を諦めていた方は大チャンス♪"><!--検索エンジンのタイトル下の抜粋説明部分になる(160文字程度で記述する)-->
+    <link rel="icon" href="images/favicon-8.png"><!--ファビコン設定(タブとブックマークした時のマークとして表示される)→png書き出しはpng-8を選ぶと透過する-->
+    <link rel="stylesheet" href="style.css"> <!--これ記述しないとcssに連携されない-->
+    <!-- 「ogpタグのツイッター/FB/内部SEO」といキーワードで検索 -->
+</head>
+
+<body>
+    <!--==============ローダー===============-->  
+    <div id="splash">
+        <div id="splash_text"></div>
+        <div class="loader_cover loader_cover-up"></div>
+        <div class="loader_cover loader_cover-down"></div>
+    </div>
+    
+    <!--==============JQuery読み込み===============-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+    <!--IE11用※対応しなければ削除してください-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
+    <!--自作のJS-->
+    <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-3/js/4-1-3.js"></script>
+
+    <!--==============デザインカンプ===============-->  
+    <section>
+       <div class=“inner”>
+            <!-- <div class=“c_title”> -->
+                    
+                <div class="img-catchcopy">
+                    <picture> <!--max-width なら数字が小さい順。min-width なら数字が大きい順に記述-->
+                       <source srcset="images/catchcopy@2x-100.jpg" media="(min-width: 800px)" >   <!-- PC --> 
+                       <source srcset="images/catchcopy-ipadmini@2x-100.jpg" media="(min-width: 760px)" >   <!-- iPad Mini：768 --> 
+                       <source srcset="images/catchcopy-sp@2x-100.jpg" media="(min-width: 350px)">   <!-- スマホ --> 
+                       <source srcset="images/catchcopy-galaxy@2x-100.jpg" media="(min-width: 270px)">   <!-- Galaxy Fold：280 -->   
+                       <img src="images/catchcopy-sp@2x-100.jpg" alt="other">
+                    </picture>
+                    <a href="https://lond-design.com/request-form/" class="btn_01"><p>100万円OFF<br/>クーポンをもらう</p></a>
+                </div>
+                <!-- <div class="text-c_title">                   
+                    <p>
+                    結婚式<br/>
+                    を挙げませんか？<br/>
+                    0円
+                    </p>
+                </div> -->
+            <!-- </div> -->
+
+            <div class="zeroen_content">
+                <picture> 
+                    <source srcset="images/about-0enwedding@2x-100.jpg" media="(min-width: 800px)" >   <!-- PC --> 
+                    <source srcset="images/about-0enwedding-ipadmini@2x-100.jpg" media="(min-width: 760px)" >   <!-- iPad Mini：768 --> 
+                    <source srcset="images/about-0enwedding-sp@2x-100.jpg" media="(min-width: 350px)">   <!-- スマホ --> 
+                    <source srcset="images/about-0enwedding-galaxy@2x-100.jpg" media="(min-width: 270px)">   <!-- Galaxy Fold：280 -->   
+                    <img src="images/about-0enwedding-sp@2x-100.jpg" alt="other">
+                </picture>
+            </div>
+
+            <div class="wish_content">
+                <picture> 
+                    <source srcset="images/about-wish@2x-100.jpg" media="(min-width: 760px)" >     
+                    <source srcset="images/about-wish-sp@2x-100.jpg" media="(min-width: 350px)">       
+                    <img src="images/about-wish-sp@2x-100.jpg" alt="">
+                </picture>
+            </div>
+
+            <div class="s_btn2">
+                <picture> 
+                <source srcset="images/btn2_content@2x-100.jpg" media="(min-width: 800px)" >   <!-- PC --> 
+                <source srcset="images/btn2_content-ipadmini@2x-100.jpg" media="(min-width: 760px)" >   <!-- iPad Mini：768 -->  
+                <source srcset="images/btn2_content-sp@2x-100.jpg" media="(min-width: 350px)">   <!-- スマホ --> 
+                <source srcset="images/btn2_content-galaxy@2x-100.jpg" media="(min-width: 270px)">   <!-- Galaxy Fold：280 -->   
+                <img src="images/btn2_content-sp@2x-100.jpg" alt="">   
+                </picture> 
+                <a href="https://lond-design.com/request-form/" class="btn_02"><p>100万円OFF<br/>クーポンをもらう</p></a>
+            </div>
+
+            <div class="voice_content">
+                <picture> 
+                    <source srcset="images/voice@2x-100.jpg" media="(min-width: 800px)" >    
+                    <source srcset="images/voice@2x-100.jpg" media="(min-width: 760px)" >   <!-- iPad Mini：768 -->   
+                    <source srcset="images/voice-sp@2x-100.jpg" media="(min-width: 350px)">
+                    <source srcset="images/voice-sp@2x-100.jpg" media="(min-width: 270px)">   <!-- Galaxy Fold：280 -->         
+                    <img src="images/voice-sp@2x-100.jp" alt="">
+                </picture>
+            </div>
+
+            <div class="reason_content">
+                <picture> 
+                    <source srcset="images/reason@2x-100.jpg" media="(min-width: 760px)" >     
+                    <source srcset="images/reason-sp@2x-100.jpg" media="(min-width: 350px)">           
+                    <img src="images/reason-sp@2x-100.jpg" alt="">
+                </picture>
+            </div>
+
+            <div class="request_content">
+                <picture> 
+                    <source srcset="images/request@2x-100.jpg" media="(min-width: 760px)" >      
+                    <source srcset="images/request-sp@2x-100.jpg" media="(min-width: 350px)">         
+                    <img src="images/request-sp@2x-100.jpg" alt="">
+                </picture>
+            </div>
+
+            <div class="area_content">
+                <picture> 
+                    <source srcset="images/area@2x-100.jpg" media="(min-width: 760px)" >     
+                    <source srcset="images/area-sp@2x-100.jpg" media="(min-width: 350px)">           
+                    <img src="images/area-sp@2x-100.jpg" alt="">
+                </picture>
+            </div>
+
+            <div class="qa_content">
+                <picture> 
+                    <source srcset="images/qa@2x-100.jpg" media="(min-width: 760px)" >    
+                    <source srcset="images/qa-sp@2x-100.jpg" media="(min-width: 350px)">            
+                    <img src="images/qa-sp@2x-100.jpg" alt="">
+                </picture>
+            </div>
+
+            <div class="s_btn3">
+                <picture> 
+                    <source srcset="images/btn3_content@2x-100.jpg" media="(min-width: 800px)" >   <!-- PC --> 
+                    <source srcset="images/btn3_content-ipadmini@2x-100.jpg" media="(min-width: 760px)" >   <!-- iPad Mini：768 -->  
+                    <source srcset="images/btn3_content-sp@2x-100.jpg" media="(min-width: 350px)">   <!-- スマホ --> 
+                    <source srcset="images/btn3_content-galaxy@2x-100.jpg" media="(min-width: 270px)">   <!-- Galaxy Fold：280 -->   
+                    <img src="images/btn3_content-sp@2x-100.jpg" alt="">   
+                </picture> 
+                <a href="https://lond-design.com/request-form/" class="btn_03"><p>100万円OFF<br/>クーポンをもらう</p></a>
+            </div>
+            
+            <div class="footer04">
+                <ul class="menu">
+                  <li><a href="https://lond-design.com/">会社概要</a></li>
+                  <li><a href="https://lond-design.com/">プライバシーポリシー</a></li>
+                  <!-- <li><a href="#">CCCCC</a></li>
+                  <li><a href="#">DDDDD</a></li>
+                  <li><a href="#">EEEEE</a></li> -->
+                </ul>
+                <p class="copyright">
+                  &copy; 2024  LOND DESIGN  All Rights Reserved.
+                </p>
+              </div>
+
+       </div>
+    </section>
+</body>
+</html>

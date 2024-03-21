@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/100-wedding/*"
+  to = "https://100-wedding.netlify.app/:splat"
+  status = 200
+  force = true

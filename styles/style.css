@@ -1,0 +1,481 @@
+@charset 'utf-8';  /*# 文字コード指定
+/*# ↓ブラウザのデフォルトのCSSを無効化させる！これしないとスタイリングできない。(Doctor cssで検索して出てきたコードをコピペ。他にも種類はあるので自分に合うものを使えばOK）
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+
+
+/*↓ここからデザインカンプの内容記述していく*/
+.inner {
+  background-color: white;
+  min-width: 100%;  /* 画面小さくした時はみ出ないようにする */
+  min-height: 100%;
+  padding: 0px;
+  margin: 0 auto;   /* 中央寄せ */
+  position:relative;
+	background-size:cover;
+}
+
+/* -------- */
+/* flexbox参考：https://moshashugyo.com/media/flexbox-img-extend */
+img { /* img画像 */
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+/* -------- */
+
+.c_title {
+  background: transparent;
+  margin-left: auto;     /* 外の左余白 */
+  margin-right: auto;    /* 外の右余白 */
+  margin-top:   0px;     /* 外の上余白 */
+  margin-bottom:0px;     /* 外の下余白 */
+  width: 100%;    /* 箱 */
+  height: auto;    /* 箱 */
+  text-align: center;
+  margin: 0 0 auto;
+}
+
+.img-catchcopy-sp .img-catchcopy .img-catchcopy-another{
+  /* display: flex;
+  justify-content: center;
+  background-size: cover; */
+  background-position: center center;  /* 画像の横・縦の位置を指定*/
+  height: 100%;   /* 写真サイズ＝autoだめ */
+  width: 100%;    /* 箱に中央整列は50%? */
+  margin-left: auto;     /* 外の左余白 */
+  margin-right: auto;    /* 外の右余白 */
+  margin-top:   0px;     /* 外の上余白 */
+  margin-bottom:0px;     /* 外の下余白 */
+  position: absolute;
+  /* 詳細これ見る　https://komaricote.com/html-css/picture-element/ */
+}
+
+/* .text-c_title {
+    width: 200px;
+}*/
+/* .h1 {
+  text-align: center;
+  margin: 0 0 auto; */
+    /* 詳細これ見る　https://haniwaman.com/inner/ */
+/* } */
+
+.s_btn1_animation {
+  transform-origin:50% 50%;
+  display:block;
+  position: absolute; /* HTMLの物理法則から外れて独自のはぐれものにする */
+  top: 50%;                      /* 親を基準に半分の位置に。左上基準なのでこれだけだと少しずれる */
+  transform: translateY(-50%);   /* -で上に。縦方向の中心へ */
+  mix-blend-mode: multiply;    /* ボタン以外の背景を透過させる */
+  height: auto;   /* 写真サイズ＝autoだめ */
+  width: 100%;   /* img-catchcopyにサイズ合わせる */
+  top:0px;
+  left:0px;
+  z-index: 20;
+  border:0;
+  justify-content: center;
+  text-align: center;
+  /* background: white; */
+  padding: 0rem;
+  transition: transform 0s ease;
+  animation-name: img-rotate1;
+  animation-duration: 1.6s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+}
+@keyframes img-rotate1 {
+  0%,100% {
+  transform: scale(0.9);
+  }
+  50% {
+  transform: scale(1);
+  }
+}
+/* 
+a.btn_06 {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	width: 40%;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	border-radius: 100vh;
+	border-bottom: 10px solid rgb(227, 72, 139);
+	background: rgb(234,104,161);
+	color: #fff;
+  p {
+    font-size: 100%;
+    line-height: 1.5;
+  }
+}
+a.btn_06:hover {
+	margin-top: 6px;
+	border-bottom: 1px solid rgb(227, 72, 139);
+	color: #fff;
+} */
+
+.p_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 14rem;
+}
+
+.zeroen_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.wish_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.s_btn2 {
+  position:relative;
+  opacity: 1;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.s_btn2_animation {
+display:block;
+position: absolute; /* HTMLの物理法則から外れて独自のはぐれものにする */
+top: 50%;                      /* 親を基準に半分の位置に。左上基準なのでこれだけだと少しずれる */
+transform: translateY(-50%);   /* -で上に。縦方向の中心へ */
+mix-blend-mode: multiply;    /* ボタン以外の背景を透過させる */
+
+height: auto;   /* 写真サイズ＝autoだめ */
+width: 100%;   /* img-catchcopyにサイズ合わせる */
+top:0px;
+left:0px;
+z-index: 20;
+border:0;
+justify-content: center;
+text-align: center;
+background: white;
+padding: 0rem;
+transition: transform 0s ease;
+animation-name: img-rotate2;
+animation-duration: 1.6s;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+animation-iteration-count: infinite;
+animation-direction: normal;
+animation-fill-mode: forwards;
+margin-left: auto;     /* 左の余白 */
+margin-right: auto;    /* 右の余白 */
+margin-top: 0px;     /* 上の余白 */
+margin-bottom: 0px;     /* 下の余白 */
+}
+@keyframes img-rotate2 {
+  0%,100% {
+  transform: scale(0.9);
+  }
+  50% {
+  transform: scale(1);
+  }
+}
+
+.voice_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.reason_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.reason_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.request_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.area_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.qa_content {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 0rem;
+}
+
+.s_btn3 {
+  position:relative;
+  opacity: 1;
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  overflow: hidden;     
+  margin-left: auto;     /* 左の余白 */
+  margin-right: auto;    /* 右の余白 */
+  margin-top: 0px;     /* 上の余白 */
+  margin-bottom: 0px;     /* 下の余白 */
+  transition: transform 0.6s ease;
+  height: auto;
+  text-align: center;
+  background: white;
+  padding: 1rem;
+}
+  @keyframes fadeIn {
+    0% {opacity: 0.8}
+    100% {opacity: 1}
+}
+
+.s_btn3_animation {
+display:block;
+position: absolute; /* HTMLの物理法則から外れて独自のはぐれものにする */
+top: 50%;                      /* 親を基準に半分の位置に。左上基準なのでこれだけだと少しずれる */
+transform: translateY(-50%);   /* -で上に。縦方向の中心へ */
+mix-blend-mode: multiply;    /* ボタン以外の背景を透過させる */
+
+height: auto;   /* 写真サイズ＝autoだめ */
+width: 100%;   /* img-catchcopyにサイズ合わせる */
+top:0px;
+left:0px;
+z-index: 20;
+border:0;
+justify-content: center;
+text-align: center;
+background: white;
+padding: 0rem;
+transition: transform 0s ease;
+animation-name: img-rotate3;
+animation-duration: 1.6s;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+animation-iteration-count: infinite;
+animation-direction: normal;
+animation-fill-mode: forwards;
+margin-left: auto;     /* 左の余白 */
+margin-right: auto;    /* 右の余白 */
+margin-top: 0px;     /* 上の余白 */
+margin-bottom: 0px;     /* 下の余白 */
+}
+@keyframes img-rotate3 {
+  0%,100% {
+  transform: scale(0.9);
+  }
+  50% {
+  transform: scale(1);
+  }
+}
